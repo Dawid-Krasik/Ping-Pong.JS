@@ -1,0 +1,56 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  background-color: aqua;
+}
+nav{
+  background-color: #616464;
+  margin:0px;
+  padding: 0px;
+  display:flex;
+  align-items: center;
+  justify-content: center; 
+}
+nav #newGameButton,#playAgainButton{
+  margin-left: 125px;
+  margin-right: 125px;
+  padding: 5px;
+  font-size: 30px;
+  background-color: crimson;
+}
+
+
+#board {
+    margin:0;
+    padding: 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;   
+    background-color: darkgray;  
+    
+    /*
+    max-width: 1300px;
+    height: 100vh; 
+    
+    */  
+}
+canvas{
+   border: 3px solid rgb(21, 18, 187);
+  /*  */
+}
+footer{
+  background-color: blueviolet;
+  margin:0px;
+  padding: 0px;
+  display:flex;
+  align-items: center;
+  justify-content: center;    
+}
+footer #player,#si {
+  color: white;
+  margin-bottom: -10px;
+  margin-top: -10px;  
+  margin-left: 300px;
+  margin-right: 300px;
+  font-size: 60px;
+}
