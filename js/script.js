@@ -9,9 +9,11 @@
 
 // DOM documents and claim Varibles
 const canvas = document.querySelector("canvas"),
-      ctx = canvas.getContext("2d");
+    ctx = canvas.getContext("2d");
 let newGameB = document.getElementById("newGameButton"),
-    playAgainB = document.getElementById("playAgainButton");
+    playAgainB = document.getElementById("playAgainButton"),
+    playerScore = document.getElementById("playerScore"),
+    siScore = document.getElementById("siScore");
 
     canvas.width = 1000;
     canvas.height = 500;
@@ -47,6 +49,10 @@ let gameStarted = false;
 let gameOver = false;
 let playerWon = false;
 
+   /* 
+                     I have made functions self descripting by Name 
+    */
+
 // back-graund Sound
 let sound = new Audio("sound.mp3");
 sound.loop = true;
@@ -61,7 +67,6 @@ bip.volume = 0.1;
 
 //buttons
 newGameB.addEventListener('click', function () {
-
     gameStarted = false;
     gameOver = false;
     playerWon = false;
@@ -74,9 +79,6 @@ playAgainB.addEventListener('click', function () {
     endGame()
     pauseM()
 });
-
-
-                    /* Functions self descripting Name*/
 
 
 //player paddel
@@ -205,6 +207,7 @@ function score (){
         console.log(aiPoints + " " + "Punkty AI ");
         ballSpeedX = 5;
         ballSpeedY = -5;
+        siScore.textContent = aiPoints ;
     }
     
 
@@ -214,6 +217,7 @@ function score (){
         console.log(playerPoints + " " + "Punkty gracza");
         ballSpeedX = -5;
         ballSpeedY =  5;
+        playerScore.textContent = playerPoints;
     }
 }
 
@@ -227,6 +231,8 @@ function endGame (){
     playerPoints = 0;
     aiPoints = 0;
     newGameButton.style.display = 'inline';
+    siScore.textContent = aiPoints ;
+    playerScore.textContent = playerPoints;
 }
 
 // funcion ending the game affter some one get 10 score
@@ -234,10 +240,12 @@ function endGame (){
         if (playerPoints >= 3){
         console.log ("Player Won");
         endGame()
+        alert("Brawo Wygrałeś");
          }
 
         if (aiPoints >= 3) {
         console.log("Computer Won");
+        alert("Niestety Przegrałeś");
         endGame()
         }
 }
